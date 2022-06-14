@@ -1,25 +1,20 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { Route, Routes } from 'react-router-dom';
+import { AgendaContacto } from './componentes/AgendaContacto';
+import { TablaAgenda } from './componentes/TablaAgenda';
+import { FormContacto } from './componentes/FormContacto';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+    <Route path="/" element={<AgendaContacto/>}/>
+    <Route path="/agenda" element={<AgendaContacto/>}/>
+    <Route path="/agenda/:indice" element={<AgendaContacto />} />
+    <Route path="/tabla" element={<TablaAgenda/>}/>
+    <Route path="/formulario/:id" element={<FormContacto/>}/>
+  </Routes>
   );
 }
 
